@@ -1,7 +1,7 @@
 CREATE TABLE ws_servico(
 	codigo BIGINT(20) PRIMARY KEY AUTO_INCREMENT,
 	os BIGINT(6) NOT NULL,
-	titulo VARCHAR(50) NOT NULL,
+	titulo VARCHAR(100) NOT NULL,
 	dt_entrada DATE ,
 	dt_homologacao DATE ,
 	dt_commit DATE ,
