@@ -1,4 +1,4 @@
-package com.br.marte.api.filter;
+package com.br.marte.api.repository.filter;
 
 import java.time.LocalDate;
 

@@ -28,11 +28,11 @@ import org.springframework.web.context.request.WebRequest;
 import com.br.marte.api.event.RecursoCriadoEvento;
 import com.br.marte.api.exceptionhandler.demoExceptionHandlerextends.Erro;
 import com.br.marte.api.execption.ServicoInexistenteOuInativaException;
-import com.br.marte.api.filter.ServicoFilter;
 import com.br.marte.api.model.Servico;
 import com.br.marte.api.model.Status;
 import com.br.marte.api.model.Usuario;
 import com.br.marte.api.repository.ServicoRepository;
+import com.br.marte.api.repository.filter.ServicoFilter;
 import com.br.marte.api.service.ServicoService;
 
 @RestController
@@ -64,10 +64,11 @@ public class ServicoResource {
 	}
 	
 	
-//	@GetMapping
-//	public Page<Servico> pesquisar(ServicoFilter servicoFilter, Pageable pageable) {
-//		return servicoRepository.filtrar(servicoFilter,pageable);
-//	}
+	@GetMapping
+	@RequestMapping("/busca")
+	public Page<Servico> pesquisar(ServicoFilter servicoFilter, Pageable pageable) {
+		return servicoRepository.filtrar(servicoFilter,pageable);
+	}
 
 	
 	@GetMapping("/{codigo}")

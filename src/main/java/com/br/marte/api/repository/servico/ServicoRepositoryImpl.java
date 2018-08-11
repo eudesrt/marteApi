@@ -1,4 +1,4 @@
-package com.br.marte.api.servico;
+package com.br.marte.api.repository.servico;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,9 +16,9 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.util.StringUtils;
 
-import com.br.marte.api.filter.ServicoFilter;
 import com.br.marte.api.model.Servico;
 import com.br.marte.api.model.Servico_;
+import com.br.marte.api.repository.filter.ServicoFilter;
 
 public class ServicoRepositoryImpl implements ServicoRespositoryQuery{
 	
@@ -70,10 +70,10 @@ public class ServicoRepositoryImpl implements ServicoRespositoryQuery{
 
 		List<Predicate> predicates = new ArrayList<>();
 		
-//		if (!StringUtils.isEmpty(servicoFilter.getOs())) {
-//
-//			predicates.add(buider.lessThan((root.get(Servico_.os)),servicoFilter.getOs()));
-//		}
+		if (!StringUtils.isEmpty(servicoFilter.getOs())) {
+
+			predicates.add(buider.lessThan((root.get(Servico_.os)),servicoFilter.getOs()));
+		}
 
 
 		if (!StringUtils.isEmpty(servicoFilter.getTitulo())) {
