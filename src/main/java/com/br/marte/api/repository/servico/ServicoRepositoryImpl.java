@@ -17,7 +17,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.util.StringUtils;
 
 import com.br.marte.api.model.Servico;
-import com.br.marte.api.model.Servico_;
 import com.br.marte.api.repository.filter.ServicoFilter;
 
 public class ServicoRepositoryImpl implements ServicoRespositoryQuery{
@@ -72,22 +71,22 @@ public class ServicoRepositoryImpl implements ServicoRespositoryQuery{
 		
 		if (!StringUtils.isEmpty(servicoFilter.getOs())) {
 
-			predicates.add(buider.lessThan((root.get(Servico_.os)),servicoFilter.getOs()));
+			//predicates.add(buider.lessThan((root.get(Servico_.os)),servicoFilter.getOs()));
 		}
 
 
 		if (!StringUtils.isEmpty(servicoFilter.getTitulo())) {
 
-			predicates.add(buider.like(buider.lower(root.get(Servico_.titulo)),
-					"%" + servicoFilter.getTitulo().toLowerCase() + "%"));
+			//predicates.add(buider.like(buider.lower(root.get(Servico_.titulo)),
+					//"%" + servicoFilter.getTitulo().toLowerCase() + "%"));
 		}
 
 		if (servicoFilter.getDtCommit() != null) {
-			predicates.add(buider.greaterThanOrEqualTo(root.get(Servico_.dtCommit),servicoFilter.getDtCommit()));
+			//predicates.add(buider.greaterThanOrEqualTo(root.get(Servico_.dtCommit),servicoFilter.getDtCommit()));
 		}
 
 		if (servicoFilter.getDtEntrada() != null) {
-			predicates.add(buider.lessThanOrEqualTo(root.get(Servico_.dtEntrada),servicoFilter.getDtEntrada()));
+			//predicates.add(buider.lessThanOrEqualTo(root.get(Servico_.dtEntrada),servicoFilter.getDtEntrada()));
 		}
 
 		return predicates.toArray(new Predicate[predicates.size()]);
