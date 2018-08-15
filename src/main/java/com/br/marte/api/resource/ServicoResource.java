@@ -64,11 +64,11 @@ public class ServicoResource {
 	}
 	
 	
-	@GetMapping
-	@RequestMapping("/busca")
-	public Page<Servico> pesquisar(ServicoFilter servicoFilter, Pageable pageable) {
-		return servicoRepository.filtrar(servicoFilter,pageable);
-	}
+//	@GetMapping
+//	@RequestMapping("/busca")
+//	public Page<Servico> pesquisar(ServicoFilter servicoFilter, Pageable pageable) {
+//		return servicoRepository.filtrar(servicoFilter,pageable);
+//	}
 
 	
 	@GetMapping("/{codigo}")
